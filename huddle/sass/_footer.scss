@@ -1,0 +1,166 @@
+.footer {
+  &__background {
+    display: block;
+    width: 100%;
+    margin-bottom: -0.75px;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-areas:
+      "contact newsletter"
+      "socials .";
+    // TODO: Change minmax
+    grid-template-columns: repeat(auto-fit, minmax(34rem, 1fr));
+    grid-column-gap: 16rem;
+    background-color: $color-black;
+    padding: 12.25rem 12rem;
+  }
+
+  &__info {
+    color: $color-white;
+
+    // Grid areas
+    &--contact {
+      grid-area: contact;
+    }
+    &--newsletter {
+      grid-area: newsletter;
+    }
+
+    &__logo {
+      padding-bottom: 2.2rem;
+      width: 24rem;
+    }
+    &__newsletter {
+      &__text {
+        width: 67%;
+        font-size: 1em;
+        padding-bottom: 4rem;
+        &--main {
+          display: block;
+          text-transform: uppercase;
+          line-height: 1.5;
+          font-size: 2.4em;
+          font-weight: 700;
+        }
+        &--sub {
+          display: block;
+          margin-top: 1.6rem;
+          line-height: 1.714;
+          font-weight: 600;
+          font-size: 1.4em;
+        }
+      }
+      &__form {
+        display: flex;
+        justify-content: space-between;
+
+        & > input {
+          margin-right: 4rem;
+        }
+      }
+    }
+    &__social {
+      &__link {
+        margin-right: 2.4rem;
+      }
+      &__icon {
+        width: 3.2rem;
+        height: 3.2rem;
+      }
+    }
+    &__text {
+      width: 66%;
+      line-height: 1.714;
+      font-weight: 600;
+      font-size: 1.4em;
+    }
+    &__contact {
+      display: block;
+      font-size: 1.6em;
+      line-height: 1.5;
+      &__icon {
+        margin-right: 2rem;
+      }
+      &__text {
+        color: $color-white;
+      }
+      &:not(:last-child) {
+        margin-bottom: 1.6rem;
+      }
+      &s {
+        padding-top: 2.4rem;
+      }
+    }
+    &__socials {
+      grid-area: socials;
+      padding-top: 8rem;
+    }
+  }
+
+  @media (max-width: $width-mobile) {
+    &__content {
+      padding: 4.6rem 2.8rem;
+
+      grid-template-areas:
+        "newsletter"
+        "contact"
+        "socials";
+      grid-template-columns: initial;
+    }
+    &__info {
+      &__contact {
+        font-size: 1.4em;
+      }
+
+      &__socials {
+        padding-top: 4.8rem;
+      }
+
+      &__social {
+        &__link {
+          margin-right: 1.73rem;
+        }
+        &__icon {
+          width: 2.3rem;
+          height: 2.3rem;
+        }
+      }
+      &--newsletter {
+        margin-bottom: 10.4rem;
+      }
+
+      &__text {
+        width: 100%;
+        font-size: 1.4em;
+      }
+      &__newsletter {
+        &__text {
+          width: 100%;
+
+          &--main {
+            font-size: 2em;
+          }
+
+          &--sub {
+            font-size: 1.4em;
+            font-weight: 600;
+          }
+        }
+        &__form {
+          flex-direction: column;
+
+          & > input {
+            margin-right: 0;
+          }
+
+          & > button {
+            margin-top: 1.6rem;
+            margin-left: 16rem;
+          }
+        }
+      }
+    }
+  }
+}

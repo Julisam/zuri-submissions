@@ -1,0 +1,12 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 8rem;
+  padding-right: 6rem;
+  padding-bottom: 0;
+
+  @media (max-width: $width-mobile) {
+    padding: 2.4rem;
+    padding-bottom: 0;
+  }
+}

@@ -1,0 +1,99 @@
+.feature {
+  &__background {
+    display: block;
+    width: 100%;
+
+    &--top {
+    }
+    &--bottom {
+    }
+  }
+
+  &--2 {
+    padding-top: 19rem;
+    padding-bottom: 11.1rem;
+
+    & > div {
+      padding-top: 4rem;
+    }
+  }
+
+  &--3 {
+    & > div {
+      padding-top: 3rem;
+    }
+  }
+
+  // Section container
+  &s {
+  }
+
+  &__info {
+    display: grid;
+    // TODO: Change minmax
+    grid-template-columns: repeat(auto-fit, minmax(52rem, 1fr));
+    grid-column-gap: 3rem;
+    background-color: $color-primary-light;
+    padding: 3rem 8rem;
+    padding-top: 7.25rem;
+
+    &__text {
+      z-index: 1;
+      font-size: 1em;
+      padding: 0 5rem;
+      margin: auto;
+      line-height: 1.5;
+      &--main {
+        display: block;
+        font-family: $font-display;
+        font-size: 4em;
+        font-weight: 700;
+      }
+      &--sub {
+        display: block;
+        padding-top: 2.6rem;
+        font-size: 1.6em;
+        font-weight: 400;
+      }
+    }
+
+    &__image {
+      z-index: 1;
+      display: block;
+      width: 100%;
+      padding: 0 6rem;
+    }
+
+    &--no-background {
+      background-color: inherit;
+    }
+  }
+
+  @media (max-width: $width-mobile) {
+    &__info {
+      padding: 3rem 2.8rem;
+      &__image {
+        padding: 0 3rem;
+        grid-column: 1;
+        grid-row: 1;
+        max-width: 27rem;
+      }
+
+      &__text {
+        max-width: 32rem;
+        grid-row: 2;
+        margin: 0;
+        margin-top: 7.42rem;
+        padding: 0;
+        text-align: center;
+        &--main {
+          font-size: 2em;
+        }
+        &--sub {
+          font-size: 1.4em;
+          padding-top: 1.6rem;
+        }
+      }
+    }
+  }
+}
